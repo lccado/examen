@@ -31,9 +31,7 @@ public class UserController {
     public User createUser(@PathVariable Long id) {
         Optional<User> op = userRepository.findById(id);
         if(op.isPresent()) {
-            //return op.get();
-            log.info(op.get().toString());
-            return null;
+            return op.get();
         } else {
             return null;
         }
